@@ -43,13 +43,20 @@ class MapPresenter(
             .subscribeOn(Schedulers.io())
             .subscribe({ response ->
                 if (response != null) {
-                    mView?.showCity(response)
+                    filterCities(response, city)
                 } else {
                     mView?.showError(GlovoApplication.getAppContext().getString(R.string.error_communication))
                 }
             }, { error ->
                 mView?.showError(GlovoApplication.getAppContext().getString(R.string.error_communication))
             })
+    }
+
+    private fun filterCities(citiesOrg: List<City>, city: City) {
+        for (item in citiesOrg) {
+            if (item.code == city.code)
+                mView?.showCity(item)
+        }
     }
 
     fun searchCurrentCity(context: Context?, currentLocation: LatLng) {

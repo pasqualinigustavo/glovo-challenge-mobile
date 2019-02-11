@@ -235,12 +235,13 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleApiClient.Connecti
             .show()
     }
 
-    override fun showCity(cityInfo: List<City>) {
+    override fun showCity(city: City) {
         hideProgressDialog()
         fragment_map__cityname.text = getString(R.string.cityname, city.name, city.country_code)
         fragment_map__language_code.text = getString(R.string.language_code, city.language_code)
         fragment_map__currency.text = getString(R.string.currency_code, city.currency)
         var builder: LatLngBounds.Builder = LatLngBounds.Builder()
+
         for (item in city.working_area) {
             if (item != null) {
                 var pointList: MutableList<LatLng>? = null

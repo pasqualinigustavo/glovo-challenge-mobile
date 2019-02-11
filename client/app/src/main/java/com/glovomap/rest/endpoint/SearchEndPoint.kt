@@ -13,6 +13,6 @@ interface SearchEndPoint {
     @GET("/api/cities")
     fun getCities(): Observable<List<City>>
 
-    @GET("/api/cities")
+    @GET("/api/cities") //I don't understood why this endpoint returns N cities...
     fun getCity(@Query("city_code") cityId: String?): Observable<List<City>>
 }
