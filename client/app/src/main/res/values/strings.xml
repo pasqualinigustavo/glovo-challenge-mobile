@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">GlovoMap Test</string>
+
+    <!--EnableGPSActivity-->
+    <string name="fragment_gps_disable_title_need_location">Need your location</string>
+    <string name="fragment_gps_disable_title_authorize_location">Oops</string>
+    <string name="fragment_gps_disable_text_authorize_location">You have not authorized T-Rex to use your location
+    </string>
+    <string name="fragment_gps_disable_text_need_location">Allow GlovoMap to access your location</string>
+    <string name="fragment_gps_disable_button_ok_lbl">Enable Location</string>
+    <string name="fragment_gps_disable_button_ok_lbl_gps_disable">Change configuration</string>
+
+    <!--MapFragment-->
+    <string name="cityname">Name: %1s %2s</string>
+    <string name="language_code">Language: %1s</string>
+    <string name="currency_code">Currency: %1s</string>
+
+    <!--Messages-->
+    <string name="label_please_wait">Please wait...</string>
+    <string name="label_loading">Loading</string>
+    <string name="label_attention">Attention</string>
+    <string name="label_ok">OK</string>
+    <string name="error_communication">Communication error</string>
+    <string name="city_not_found">City not found, please select your location</string>
+</resources>

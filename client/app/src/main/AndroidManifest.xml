@@ -1,0 +1,61 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.glovomap">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <permission
+            android:name="com.glovomap.permission.MAPS_RECEIVE"
+            android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.glovomap.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <application
+            android:name=".app.GlovoApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:largeHeap="true"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+
+        <meta-data
+                android:name="com.google.android.maps.v2.API_KEY"
+                android:value="AIzaSyAIH58pbVvX9bS7ZW9v7QNXKtwgYjwVjD0" />
+
+        <activity
+                android:name=".activities.launcher.LauncherActivity"
+                android:label="@string/app_name">
+
+        </activity>
+
+        <activity
+                android:name=".activities.gps.GPSEnableActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.Design.NoActionBar"></activity>
+
+        <activity
+                android:name=".activities.selectLocation.SelectLocationActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".activities.main.MainActivity"
+                android:launchMode="singleTask"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme"></activity>
+
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+    </application>
+</manifest>

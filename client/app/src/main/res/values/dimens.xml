@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="font_size_A">2sp</dimen>
+    <dimen name="font_size_B">4sp</dimen>
+    <dimen name="font_size_C">5sp</dimen>
+    <dimen name="font_size_D">7sp</dimen>
+    <dimen name="font_size_Da">9sp</dimen>
+    <dimen name="font_size_E">10sp</dimen>
+    <dimen name="font_size_Ea">11sp</dimen>
+    <dimen name="font_size_F">12sp</dimen>
+    <dimen name="font_size_Fa">13sp</dimen>
+    <dimen name="font_size_G">14sp</dimen> <!-- TEXT APPEARANCE SMALL -->
+    <dimen name="font_size_Ga">15sp</dimen>
+    <dimen name="font_size_H">16sp</dimen>
+    <dimen name="font_size_I">18sp</dimen> <!-- TEXT APPEARANCE MEDIUM -->
+    <dimen name="font_size_J">20sp</dimen>
+    <dimen name="font_size_L">22sp</dimen> <!-- TEXT APPEARANCE LARGE -->
+    <dimen name="font_size_M">24sp</dimen>
+    <dimen name="font_size_N">26sp</dimen>
+    <dimen name="font_size_O">28sp</dimen>
+    <dimen name="font_size_P">30sp</dimen>
+    <dimen name="font_size_Q">32sp</dimen>
+    <dimen name="font_size_R">34sp</dimen>
+    <dimen name="font_size_S">36sp</dimen>
+    <dimen name="font_size_T">38sp</dimen>
+    <dimen name="font_size_U">40sp</dimen>
+    <dimen name="font_size_V">42sp</dimen>
+    <dimen name="font_size_X">44sp</dimen>
+    <dimen name="font_size_Z">46sp</dimen>
+</resources>

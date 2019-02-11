@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:id="@+id/row_item__container"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:descendantFocusability="blocksDescendants">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:focusable="false"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/row_item__textview_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                tools:text="info 1"
+                android:textSize="@dimen/font_size_I"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/row_item__textview_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                android:ellipsize="end"
+                tools:text="info 1"
+                android:textSize="@dimen/font_size_H"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_gsp_disabled_main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/fragment_gsp_disabled_imageview_image"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:scaleType="fitStart"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/buttonEnableLocation"
+            android:layout_below="@+id/fragment_gsp_disabled_imageview_image"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/fragment_gsp_disabled_textview_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:text="@string/fragment_gps_disable_title_authorize_location"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/font_size_I"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fragment_gsp_disabled_textview_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:text="@string/fragment_gps_disable_text_authorize_location"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/font_size_H" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonEnableLocation"
+            style="@style/TSButton"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/border_btn_round"
+            android:text="@string/fragment_gps_disable_button_ok_lbl"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textStyle="normal" />
+    </RelativeLayout>
+</merge>
