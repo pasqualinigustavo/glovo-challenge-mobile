@@ -3,10 +3,10 @@ package com.glovomap.activities.gps
 import android.content.Context
 import android.location.LocationManager
 import android.os.Build
+import com.glovomap.activities.gps.router.GPSEnableRouter
 import com.glovomap.app.GlovoApplication
-import com.glovomap.rest.ApiComm
 
-class GPSEnablePresenter(val apiComm: ApiComm) {
+class GPSEnablePresenter(private val router: GPSEnableRouter) {
     private var mView: GPSEnableView? = null
 
     fun bindView(view: GPSEnableView) {
@@ -32,5 +32,13 @@ class GPSEnablePresenter(val apiComm: ApiComm) {
     fun isProviderGPSEnabled(context: Context): Boolean {
         val manager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return manager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+    }
+
+    fun showMainView() {
+        router.showMainView()
+    }
+
+    fun showSelectCitiesView() {
+        router.showSelectCitiesView()
     }
 }

@@ -29,9 +29,12 @@ class MainActivity : BaseActivity(R.layout.activity_main), MainView {
         component.inject(this)
         presenter.bindView(this)
 
-        var city = intent.extras.get("city") as City
-        city.let { presenter.showMapView(city); }
-
+        try {
+            var city = intent.extras.get("city") as City
+            city.let { presenter.showMapView(city) }
+        } catch (e: Exception) {
+            presenter.showMapView(null)
+        }
     }
 
     override fun initData() {

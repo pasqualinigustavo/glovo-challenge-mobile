@@ -37,13 +37,13 @@ import javax.inject.Inject
 class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, LocationListener,
     MapFragmentView, GoogleMap.OnPolygonClickListener {
 
-    lateinit var city: City
+    var city: City? = null
 
     companion object {
         val TAG = MapFragment::class.java.simpleName
 
         @JvmStatic
-        fun getInstance(city: City): MapFragment {
+        fun getInstance(city: City?): MapFragment {
             val fragment = MapFragment()
             fragment.city = city;
             return fragment
@@ -136,8 +136,10 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, GoogleApiClient.Connecti
                 mMap = googleMap
                 mMap!!.setOnMapLoadedCallback {
                     mapLoaded = true
-                    showProgressDialog()
-                    presenter.downloadCityInfo(city)
+                    if (city != null) {
+                        showProgressDialog()
+                        presenter.downloadCityInfo(city!!)
+                    }
                 }
                 mMap!!.uiSettings.isMapToolbarEnabled = false
                 mMap!!.uiSettings.isZoomControlsEnabled = true

@@ -5,7 +5,7 @@ import com.glovomap.fragments.map.MapInteractor
 import com.glovomap.fragments.map.MapPresenter
 import com.glovomap.fragments.map.router.MapFragmentRouter
 import com.glovomap.fragments.map.router.MapRouter
-import com.glovomap.main.activity.router.MapFragmentNavigator
+import com.glovomap.main.activity.router.MainNavigator
 import com.glovomap.rest.ApiComm
 import dagger.Module
 import dagger.Provides
@@ -21,11 +21,7 @@ class MapFragmentModule {
 
     @Provides
     @PerFragment
-    fun navigator() = MapFragmentNavigator()
-
-    @Provides
-    @PerFragment
-    fun router(navigator: MapFragmentNavigator): MapRouter = MapFragmentRouter(navigator)
+    fun router(navigator: MainNavigator): MapRouter = MapFragmentRouter(navigator)
 
     @Provides
     @PerFragment

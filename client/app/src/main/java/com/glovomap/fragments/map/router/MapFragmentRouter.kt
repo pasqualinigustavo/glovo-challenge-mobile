@@ -1,11 +1,11 @@
 package com.glovomap.fragments.map.router
 
-import com.glovomap.main.activity.router.MapFragmentNavigator
+import com.glovomap.main.activity.router.MainNavigator
 
-class MapFragmentRouter(private val navigator: MapFragmentNavigator) : MapRouter {
+class MapFragmentRouter(private val navigator: MainNavigator) : MapRouter {
 
-    override fun showSelectLocationView() {
-        navigator.showSelectLocationView()
+    override fun showSelectCitiesView() {
+        navigator.showSelectCitiesView()
     }
 
 }

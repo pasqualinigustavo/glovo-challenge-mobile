@@ -1,7 +1,6 @@
 package com.glovomap.activities.gps
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -65,8 +64,8 @@ class GPSEnableActivity : BaseActivity(R.layout.activity_enable_location), GPSEn
                     this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
                     TSConstants.GPS
                 )
-            } else run { setFinishResult(Activity.RESULT_OK) }
-        } else run { setFinishResult(Activity.RESULT_OK) }
+            } else run { setFinishResult(true) }
+        } else run { setFinishResult(true) }
     }
 
     override fun openSettings() {
@@ -93,9 +92,9 @@ class GPSEnableActivity : BaseActivity(R.layout.activity_enable_location), GPSEn
 
     }
 
-    private fun setFinishResult(result: Int) {
-        setResult(result)
-        finish()
+    private fun setFinishResult(ok: Boolean) {
+        if (ok) presenter.showMainView()
+        else presenter.showSelectCitiesView()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
@@ -105,8 +104,8 @@ class GPSEnableActivity : BaseActivity(R.layout.activity_enable_location), GPSEn
             TSConstants.GPS -> {
                 SharedPreferencesUtils.getInstance().save(TSConstants.FIRST_TIME_PERMISSION_MAP, false)
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    setFinishResult(Activity.RESULT_OK)
-                } else setFinishResult(Activity.RESULT_CANCELED)
+                    setFinishResult(true)
+                } else setFinishResult(false)
             }
         }
     }

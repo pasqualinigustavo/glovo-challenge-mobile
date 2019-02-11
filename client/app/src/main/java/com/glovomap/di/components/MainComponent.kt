@@ -3,6 +3,7 @@ package com.glovomap.di.components
 import com.glovomap.activities.main.MainActivity
 import com.glovomap.activities.main.di.MainModule
 import com.glovomap.di.PerActivity
+import com.glovomap.main.activity.router.MainNavigator
 import dagger.BindsInstance
 import dagger.Component
 
@@ -11,6 +12,7 @@ import dagger.Component
 interface MainComponent {
 
     fun inject(activity: MainActivity)
+    fun provideMainNavigator(): MainNavigator
 
     @Component.Builder
     interface Builder {

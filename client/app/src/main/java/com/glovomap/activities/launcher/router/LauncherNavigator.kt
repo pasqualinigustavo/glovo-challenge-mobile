@@ -4,6 +4,7 @@ import android.content.Intent
 import com.glovomap.activities.gps.GPSEnableActivity
 import com.glovomap.activities.launcher.LauncherActivity
 import com.glovomap.activities.main.MainActivity
+import com.glovomap.activities.selectLocation.SelectLocationActivity
 
 class LauncherNavigator(private val activity: LauncherActivity) {
 
@@ -18,7 +19,7 @@ class LauncherNavigator(private val activity: LauncherActivity) {
     }
 
     fun showSelectCitiesView() {
-        val i = Intent(activity, MainActivity::class.java)
+        val i = Intent(activity, SelectLocationActivity::class.java)
         activity.startActivity(i)
         activity.finish()
     }

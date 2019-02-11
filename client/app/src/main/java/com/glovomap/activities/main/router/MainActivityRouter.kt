@@ -5,7 +5,7 @@ import com.glovomap.sia.rest.request.City
 
 class MainActivityRouter(private val navigator: MainNavigator) : MainRouter {
 
-    override fun showMapView(city: City) {
+    override fun showMapView(city: City?) {
         navigator.showMapView(city)
     }
 

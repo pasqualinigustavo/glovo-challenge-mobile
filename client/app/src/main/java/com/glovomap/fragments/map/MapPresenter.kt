@@ -86,12 +86,14 @@ class MapPresenter(
                 if (cityName != null && !cities.isEmpty()) {
                     cityName = Normalizer.normalize(cityName, Normalizer.Form.NFD)
                     cityName = cityName.replace("[^\\p{ASCII}]".toRegex(), "")
+                    var city: City? = null
                     for (item in cities) {
                         if (item.name == cityName)
-                            mView?.readCity(item)
+                            city = item
                     }
+                    if (city != null) mView?.readCity(city)
+                    else mView?.showErrorLocation(context!!.getString(R.string.city_not_found))
                 } else mView?.showErrorLocation(context!!.getString(R.string.city_not_found))
-
             }
         } catch (e: IOException) {
             e.printStackTrace()
@@ -101,7 +103,7 @@ class MapPresenter(
     }
 
     fun openSelectLocationView() {
-        router.showSelectLocationView()
+        router.showSelectCitiesView()
     }
 
     fun decodePoly(encoded: String): MutableList<LatLng> {
